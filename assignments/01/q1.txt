@@ -1,0 +1,25 @@
+a) What are the problems with File system data management?
+There are many problems, e.g 
+- it provides no default measures to ensure data integrity
+- it becomes very difficult to keep the data up to date in a multi-user environment
+- it is easily prone to data redundancy issues
+- it has no built in user authorization mechanisms, risking security
+- no queries
+
+b) Explain the usage of the Composite Primary key with an example.
+A composite primary key is used when multiple attributes in a relation together
+can unique identify a row. e.g in a table that maps the friendship between two users,
+userId and friendId can be considered a composite primary key
+
+c) what operations are performed by the application program when DBMS is used.
+An application program can use the DBMS to read and query data along with being able to generate reports
+Moreover, the user can also modify, delete or create data
+
+d) which independence is difficult to achieve in three schema architectures and why. Elaborate with an
+example.
+Logical independence, as slight changes in the conceptual schema necessitate the change of the external view
+in order to keep the logic intact
+
+e) A key is a superkey but not vice versa. Explain this statement with an example.
+A super key is a key consisting of multiple attributes to create a valid key. However, it may not always be a key
+as a key is the minimum required attributes to make it a valid key. e.g in a table depicting user friendship,
