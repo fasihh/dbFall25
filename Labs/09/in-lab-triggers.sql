@@ -47,6 +47,7 @@ create table std_logs_del (
     deleted_at date
 );
 
+-- ACTIVITY 1
 create trigger log_student_del
 after delete on students
 for each row
@@ -72,6 +73,7 @@ begin
 end;
 /
 
+-- ACTIVITY 2
 create or replace trigger prevent_std_table_drop
 before drop on database
 begin
