@@ -1,0 +1,35 @@
+-- Q1
+-- selecting menu item names that are not available and have price greater than 500
+select itemName from menuItem where isAvailable = 0 and price > 500;
+
+-- Q2
+-- selecting menu item names that have price greater than 300 and are beverages or the item is a dessert
+select itemName from menuItem where category = 'Dessert' or (category = 'Beverage' and pirce > 300);
+
+-- Q3
+-- selecting menu item names that are available and are snacks
+select itemName from menuItem where category = 'Snack' and isAvailable = 1;
+
+-- Q4
+-- selecting menu item names and prices / 100 for all menu items that are currently available and are snacks
+select itemName, price / 100 from menuItem where category = 'Snack' and isAvailable = 1;
+
+-- Q5
+-- selecting supplier ID where item name being suppplied is cappuccino
+select s.supplierID from supplies s join menuItem m on s.itemID = m.itemID where m.itemName = 'Cappucino';
+
+-- Q6
+-- select employee name and cafe name where employee that works in the caffee within the same city
+select e.name, c.cafeName from employee e join cafe c on e.cafeID = c.cafeID where e.address = c.city;
+
+-- Q7
+-- select employee id of employees who have a salary that is not 50000
+select empID from employee where salary <> 50000;
+
+-- Q8
+-- select supplierID who supply in karachi and lahore
+select supplierID from supplier where city = 'Karachi' INTERSECT select supplierID from supplier where city = 'Lahore';
+
+-- Q9
+-- select only the menu item names that are not associated with supplies
+select itemName from menuItem MINUS select itemName from menuItems m join supplies s on m.itemID = m.itemID;
